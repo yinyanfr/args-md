@@ -1,0 +1,40 @@
+{
+  "name": "args-md",
+  "version": "0.0.1-alpha",
+  "description": "The CLI tool that output the help message of args as markdown.",
+  "main": "dist/index.js",
+  "bin": "dist/cli/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "lint": "eslint",
+    "build": "npm run lint && tsc",
+    "clean": "rm -rf dist/",
+    "prepublishOnly": "tsc"
+  },
+  "keywords": [
+    "args",
+    "markdown",
+    "cli",
+    "documentation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinyanfr/comic-dl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yinyanfr/comic-dl/issues"
+  },
+  "homepage": "https://github.com/yinyanfr/comic-dl#readme",
+  "author": "Yan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "eslint": "^8.39.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.0.4"
+  }
+}
