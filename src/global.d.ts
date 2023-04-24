@@ -1,3 +1,5 @@
+type ValueOf<T> = T[keyof T];
+
 declare namespace ArgsHelp {
   interface Command {
     name: string;
@@ -16,8 +18,8 @@ declare namespace ArgsHelp {
   }
 
   interface Root {
-    commands: Command[];
-    options: Option[];
-    examples: Example[];
+    commands?: Command[];
+    options?: Option[];
+    examples?: Example[];
   }
 }

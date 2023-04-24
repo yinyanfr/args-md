@@ -1,0 +1,202 @@
+{
+  "commands": [
+    {
+      "name": "chapter",
+      "description": "Download images from one chapter.",
+      "aliases": [
+        "c",
+        "ch"
+      ]
+    },
+    {
+      "name": "download",
+      "description": "Download chapters from a manga serie.",
+      "aliases": [
+        "d",
+        "dl"
+      ]
+    },
+    {
+      "name": "generate",
+      "description": "Generate template for your module.",
+      "aliases": [
+        "g",
+        "gen"
+      ]
+    },
+    {
+      "name": "help",
+      "description": "Display help",
+      "aliases": []
+    },
+    {
+      "name": "list",
+      "description": "List all chapters of a manga serie.",
+      "aliases": [
+        "l",
+        "ls"
+      ]
+    },
+    {
+      "name": "version",
+      "description": "Display version",
+      "aliases": []
+    }
+  ],
+  "options": [
+    {
+      "name": "-a, --archive",
+      "description": "Optional: Output zip or cbz archive grouped by chapters."
+    },
+    {
+      "name": "-A, --auth",
+      "description": "Optional: A string that contains token or cookie."
+    },
+    {
+      "name": "-b, --batch",
+      "description": "Optional: Set the number or images to be downloaded simultaneously, default to 1."
+    },
+    {
+      "name": "-C, --chapters",
+      "description": "Optional: Only downloading given list of chapters, example: -C 1,2,4,7"
+    },
+    {
+      "name": "-c, --cookie",
+      "description": "Optional (but recommanded): Provide the path to a text file that contains your cookie."
+    },
+    {
+      "name": "-F, --format",
+      "description": "Optional: the format of downloaded picture, depending on the modules, example: webp / jpg."
+    },
+    {
+      "name": "-f, --from",
+      "description": "Optional: Starting chapter when downloading a serie, default to 0."
+    },
+    {
+      "name": "-g, --group",
+      "description": "Optional: For sites that provides series in groups, please refer to the site info docs, default to default."
+    },
+    {
+      "name": "-H, --help",
+      "description": "Output usage information"
+    },
+    {
+      "name": "-h, --history",
+      "description": "Optional: (Experimental) Add the serie url to a given text file when using the `download` command, its value is default to a `history.txt` file under the same path of `--output`."
+    },
+    {
+      "name": "-I, --indexed-chapters",
+      "description": "Optional: Add index to the folder / archive file name of chapters."
+    },
+    {
+      "name": "-i, --info",
+      "description": "Optional: Generate ComicInfo.xml."
+    },
+    {
+      "name": "-l, --list",
+      "description": "Optional: (Experimental) The path to a text file that contains a list of URLs."
+    },
+    {
+      "name": "-M, --max-title-length",
+      "description": "Optional: restrict the length of title as the folder name."
+    },
+    {
+      "name": "-m, --module",
+      "description": "Optional: Specify the module (site) name. Will attempt to detect module by url if not set."
+    },
+    {
+      "name": "-n, --name",
+      "description": "Optional: Proride the serie title and override the folder name."
+    },
+    {
+      "name": "-o, --output",
+      "description": "Optional: The path where downloaded files are saved (default to .), setting this flag when using list will save a ComicInfo.xml to the path."
+    },
+    {
+      "name": "-O, --override",
+      "description": "Optional: overrides downloaded chapters."
+    },
+    {
+      "name": "-p, --presets",
+      "description": "Optional: loading a JSON file of site presets."
+    },
+    {
+      "name": "-r, --retry",
+      "description": "Optional: Automatically re-download chapters with failed images."
+    },
+    {
+      "name": "-S, --shorthand-url",
+      "description": "Optional: The shorthand url, please refer to the module docs."
+    },
+    {
+      "name": "-s, --slience",
+      "description": "Optional: Silence the console output, including the confirm prompt."
+    },
+    {
+      "name": "-T, --timeout",
+      "description": "Optional: Override the default 10s request timeout."
+    },
+    {
+      "name": "-t, --to",
+      "description": "Optional: Ending chapter when downloading a serie, defaults to chapter.length - 1."
+    },
+    {
+      "name": "-u, --url",
+      "description": "Optional: The url to the serie or the chapter."
+    },
+    {
+      "name": "-v, --verbose",
+      "description": "Optional: Display detailed error message, overrides silence."
+    },
+    {
+      "name": "-V, --version",
+      "description": "Output the version number"
+    },
+    {
+      "name": "-y, --yes",
+      "description": "Optional: Skipping confirmation prompt when downloading series."
+    },
+    {
+      "name": "-z, --zip-level",
+      "description": "Optional: zip level for archive, default to 5."
+    }
+  ],
+  "examples": [
+    {
+      "usage": "Download a serie from its 10th chapter to 20th chapter to the given destination, 10 images at a time, output zip archives with ComicInfo.xml by chapter, retry if a chapter is not properly downloaded.",
+      "description": "$ npx comic-dl dl -c cookie.txt -f 10 -t 20 -o ~/Download/manga -a zip -r -i -b 10 -u serie_url"
+    },
+    {
+      "usage": "Download chapter index 0, 4, 12 from a serie, overriding downloaded files.",
+      "description": "$ npx comic-dl dl -c cookie.txt -o ~/Download/manga -i -O -u serie_url -c 0,4,12"
+    },
+    {
+      "usage": "Download from the group tankobon from a site that provide series in different groups.",
+      "description": "$ npx comic-dl -u serie_url -g tankobon"
+    },
+    {
+      "usage": "Download a serie with presets",
+      "description": "$ npx comic-dl -p presets.json -u serie_url"
+    },
+    {
+      "usage": "List all chapters of the given serie.",
+      "description": "$ npx comic-dl ls -u serie_url"
+    },
+    {
+      "usage": "Using shorthand URLs.",
+      "description": "$ npx comic-dl -m zerobyw -S 12345"
+    },
+    {
+      "usage": "Download a chapter named Chapter1 to current path.",
+      "description": "$ npx comic-dl ch -n Chapter1 -u chapter_url -c cookie.txt"
+    },
+    {
+      "usage": "Generate a new module named mySite.",
+      "description": "$ npx . gen --module mySite"
+    },
+    {
+      "usage": "Generate a presets json.",
+      "description": "$ npx . gen --presets > presets.json"
+    }
+  ]
+}
