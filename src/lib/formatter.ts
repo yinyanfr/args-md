@@ -16,6 +16,7 @@ function formatCommands(commands: ArgsHelp.Command[]) {
     if (aliases?.length) {
       lines.push(`\`${aliases.join(', ')}\``);
     }
+    lines.push('');
     lines.push(description);
   });
   return lines;
@@ -25,7 +26,8 @@ function formatOptions(options: ArgsHelp.Option[]) {
   const lines: string[] = [generateTitle(mdOptions.h + 1, 'Options')];
   options.forEach(option => {
     const { name, description } = option;
-    lines.push(`- ${name}`);
+    lines.push(`- \`${name}\``);
+    lines.push('');
     lines.push(description);
   });
   return lines;

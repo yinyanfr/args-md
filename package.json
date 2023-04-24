@@ -6,11 +6,10 @@
   "bin": "dist/cli/index.js",
   "types": "src/global.d.ts",
   "scripts": {
-    "tsc": "tsc",
     "lint": "eslint --ext .ts,.tsx ./src",
     "build": "npm run lint && tsc",
     "clean": "rm -rf dist/",
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "npm run test && npm run build",
     "test": "jest src/tests"
   },
   "keywords": [

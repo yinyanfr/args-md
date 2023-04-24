@@ -17,7 +17,7 @@
 your_cli help | npx args-md > cli.md
 ```
 
-[演示](https://github.com/yinyanfr/comic-dl/blob/main/docs/user/cli.md)
+[演示](https://github.com/yinyanfr/args-md/blob/main/src/tests/seeds/help.md)
 
 ### :book: 库
 

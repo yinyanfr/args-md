@@ -17,7 +17,7 @@ The CLI tool that output the help message of [args](https://www.npmjs.com/packag
 your_cli help | npx args-md > cli.md
 ```
 
-[Demo](https://github.com/yinyanfr/comic-dl/blob/main/docs/user/cli.md)
+[Demo](https://github.com/yinyanfr/args-md/blob/main/src/tests/seeds/help.md)
 
 ### :book: Library
 
